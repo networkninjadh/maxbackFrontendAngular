@@ -1,1 +1,40 @@
-<p>create-account works!</p>
+<div class="signin-box">
+    <h1>Create Account</h1>
+    <form (ngSubmit)="createAccount()" [formGroup]="createAccountForm">
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-user"></i>
+            <label for="username"></label>
+            <input formControlName="username"
+                   id="username"
+                   placeholder="Username"
+                   type="text">
+        </div>
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-envelope"></i>
+            <label for="email"></label>
+            <input formControlName="email"
+                   id="email"
+                   placeholder="E-mail"
+                   type="text">
+        </div>
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-lock"></i>
+            <label for="password"></label>
+            <input formControlName="password"
+                   id="password"
+                   placeholder="Password"
+                   type="password">
+        </div>
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-lock"></i>
+            <label for="repeatPassword"></label>
+            <input formControlName="repeatPassword"
+                   id="repeatPassword"
+                   placeholder="Confirm Password"
+                   type="password">
+        </div>
+        <button name="createaccount-submit" type="submit">Create account</button>
+    </form>
+    <p>Already a member? <a routerLink="/sign-in">Login</a></p>
+</div>
+

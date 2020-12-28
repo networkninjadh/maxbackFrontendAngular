@@ -1,17 +1,26 @@
 <div class="signin-box">
     <h1>Sign In</h1>
-    <form >
+    <form [formGroup]="signInForm" (ngSubmit)="login()">
         <div class="textbox">
-    <i class="fa fa-user" aria-hidden="true"></i>
-    <input type="text" name="uidmail" placeholder="Username" required>
-  </div>
-  <div class="textbox">
-    <i class="fa fa-lock" aria-hidden="true"></i>
-    <input type="password" name="pwd" placeholder="Password" required>
-      </div>
-    <button type="submit" name="login-submit">Login</button>
-    <p>Not yet a member? <a href="createaccount.php.html">Create account</a><p>
+            <i aria-hidden="true" class="fa fa-user"></i>
+            <label for="username"></label>
+            <input formControlName="username"
+                   id="username"
+                   placeholder="Username"
+                   type="text" />
+        </div>
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-lock"></i>
+            <label for="password"></label>
+            <input formControlName="password"
+                   id="password"
+                   placeholder="Password"
+                   type="password" />
+        </div>
+        <button name="login-submit" type="submit">Login</button>
     </form>
-
+    <p>Not yet a member?
+        <a routerLink="/create-account">Create account</a>
+    </p>
 </div>
 
