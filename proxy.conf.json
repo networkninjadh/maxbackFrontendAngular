@@ -1,0 +1,6 @@
+{
+    "/api" : {
+        "target" : "https://maxbac-demo.herokuapp.com/",
+        "secure" : false
+    }
+}

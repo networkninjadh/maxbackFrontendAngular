@@ -10,6 +10,8 @@ import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { FaqComponent } from './faq/faq.component';
 import { SignInComponent } from './sign-in/sign-in.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MessageboardComponent } from './messageboard/messageboard.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
     ServicesComponent,
     FaqComponent,
     SignInComponent,
+    ProfileComponent,
+    MessageboardComponent,
   ],
   imports: [
     BrowserModule,
