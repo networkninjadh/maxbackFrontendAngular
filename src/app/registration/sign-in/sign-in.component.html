@@ -1,0 +1,54 @@
+<div class="signin-box">
+<<<<<<< HEAD:src/app/sign-in/sign-in.component.html
+  <h1>Sign In</h1>
+  <form [formGroup]="signInForm" (ngSubmit)="login()">
+    <div class="textbox">
+      <i aria-hidden="true" class="fa fa-user"></i>
+      <label for="username"></label>
+      <input formControlName="username" id="username" placeholder="Username" type="text" />
+    </div>
+    <div class="textbox">
+      <i aria-hidden="true" class="fa fa-lock"></i>
+      <label for="password"></label>
+      <input formControlName="password" id="password" placeholder="Password" type="password" />
+    </div>
+    <button name="login-submit" type="submit">Login</button>
+  </form>
+  <p>Not yet a member?
+    <a routerLink="/create-account">Create account</a>
+  </p>
+</div>
+=======
+    <h1>Sign In</h1>
+    <form [formGroup]="signInForm" (ngSubmit)="signIn(signInForm)">
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-user"></i>
+            <label for="username"></label>
+            <input formControlName="username"
+                   id="username"
+                   placeholder="Username"
+                   type="text" />
+        </div>
+        <div class="textbox">
+            <label for="customer">Customer</label>
+            <input type="radio" id="customer" formControlName="role" value="CUSTOMER">
+
+            <label for="employee">Employee</label>
+            <input type="radio" id="employee" formControlName="role" value="EMPLOYEE">
+        </div>
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-lock"></i>
+            <label for="password"></label>
+            <input formControlName="password"
+                   id="password"
+                   placeholder="Password"
+                   type="password" />
+        </div>
+        <button name="login-submit" type="submit">Login</button>
+    </form>
+    <p>Not yet a member?
+        <a routerLink="/create-account">Create account</a>
+    </p>
+</div>
+
+>>>>>>> aa80c45ca7b32c22233e9415cfb20db56e4c354f:src/app/registration/sign-in/sign-in.component.html

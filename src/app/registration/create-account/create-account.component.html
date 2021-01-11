@@ -1,0 +1,31 @@
+<div class="signin-box">
+    <h1>Create Account</h1>
+    <form (ngSubmit)="createAccount(createAccountForm)" [formGroup]="createAccountForm">
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-user"></i>
+            <label for="username">Username</label>
+            <input formControlName="username"
+                   id="username"
+                   placeholder="Username"
+                   type="text">
+        </div>
+        <div class="textbox">
+            <label for="customer">Customer</label>
+            <input type="radio" id="customer" formControlName="role" value="CUSTOMER">
+
+            <label for="employee">Employee</label>
+            <input type="radio" id="employee" formControlName="role" value="EMPLOYEE">
+        </div>
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-lock"></i>
+            <label for="password">Password</label>
+            <input formControlName="password"
+                   id="password"
+                   placeholder="Password"
+                   type="password">
+        </div>
+        <button name="createaccount-submit" type="submit">Create account</button>
+    </form>
+    <p>Already a member? <a routerLink="/sign-in">Login</a></p>
+</div>
+
