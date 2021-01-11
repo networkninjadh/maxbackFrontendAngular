@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,11 +6,22 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
+
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+ fileToUpload: File = null;
+ apiKey: string = "";
+ sessionId: string = "";
+ v_token:string = "";
+ 
+ constructor() { }
 
-  ngOnInit(): void {
-  }
+ngOnInit(): void {
+  
+}
+
+handleFileInput(files:FileList) {
+    this.fileToUpload = files.item(0);   
+}
 
 }

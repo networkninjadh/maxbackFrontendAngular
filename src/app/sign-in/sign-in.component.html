@@ -1,6 +1,6 @@
 <div class="signin-box">
   <h1>Sign In</h1>
-  <form>
+  <form [formGroup]="signInForm" (ngSubmit)="login()">
     <div class="textbox">
       <i aria-hidden="true" class="fa fa-user"></i>
       <label for="username"></label>
@@ -9,9 +9,9 @@
     <div class="textbox">
       <i aria-hidden="true" class="fa fa-lock"></i>
       <label for="password"></label>
-      <input formControlName="password" id="pass" placeholder="Password" type="password" />
+      <input formControlName="password" id="password" placeholder="Password" type="password" />
     </div>
-    <button (click)="getUserToken()">Login</button>
+    <button name="login-submit" type="submit">Login</button>
   </form>
   <p>Not yet a member?
     <a routerLink="/create-account">Create account</a>

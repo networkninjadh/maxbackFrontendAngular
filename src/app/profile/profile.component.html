@@ -7,9 +7,9 @@
                         <div class="d-flex flex-column align-items-center text-center">
                             <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
                                 class="rounded-circle" width="150">
-                                <form action="upload.php" method="post" enctype="multipart/form-data">
+                                <form enctype="multipart/form-data">
                                     Upload Image
-                                    <input type="file" name="fileToUpload" id="fileToUpload">
+                                     <input type="file" id="file" (change)="handleFileInput($event.target.files)">
                                 </form>
                             <div class="mt-3">
                                 <h4>Username</h4>
@@ -68,7 +68,7 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <h1> Message Board </h1>
-                
+                                <app-messageboard></app-messageboard>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,11 @@
                         <div class="card h-100">
                             <div class="card-body">
                                 <h1> Chat with an Associate </h1>
-                
+                                <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+                                <div id="videos">
+                                    <div id="subscriber"></div>
+                                    <div id="publisher"></div>
+                                </div>
                             </div>
                         </div>
                     </div>

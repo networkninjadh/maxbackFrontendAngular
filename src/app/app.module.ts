@@ -9,9 +9,12 @@ import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { FaqComponent } from './faq/faq.component';
-import { SignInComponent } from './sign-in/sign-in.component';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import {SignInModule} from "./sign-in/sign-in.module";
+import {CreateAccountModule} from "./create-account/create-account.module";
 import { ProfileComponent } from './profile/profile.component';
 import { MessageboardComponent } from './messageboard/messageboard.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +25,16 @@ import { MessageboardComponent } from './messageboard/messageboard.component';
     AboutComponent,
     ServicesComponent,
     FaqComponent,
-    SignInComponent,
     ProfileComponent,
     MessageboardComponent,
+    MessageComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //SignInModule,
+    //CreateAccountModule
   ],
   providers: [],
   bootstrap: [AppComponent]
