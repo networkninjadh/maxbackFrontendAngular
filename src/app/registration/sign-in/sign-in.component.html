@@ -1,6 +1,6 @@
 <div class="signin-box">
     <h1>Sign In</h1>
-    <form [formGroup]="signInForm" (ngSubmit)="login()">
+    <form [formGroup]="signInForm" (ngSubmit)="signIn(signInForm)">
         <div class="textbox">
             <i aria-hidden="true" class="fa fa-user"></i>
             <label for="username"></label>
@@ -8,6 +8,13 @@
                    id="username"
                    placeholder="Username"
                    type="text" />
+        </div>
+        <div class="textbox">
+            <label for="customer">Customer</label>
+            <input type="radio" id="customer" formControlName="role" value="CUSTOMER">
+
+            <label for="employee">Employee</label>
+            <input type="radio" id="employee" formControlName="role" value="EMPLOYEE">
         </div>
         <div class="textbox">
             <i aria-hidden="true" class="fa fa-lock"></i>

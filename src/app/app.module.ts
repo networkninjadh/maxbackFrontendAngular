@@ -9,9 +9,9 @@ import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { ServicesComponent } from './services/services.component';
 import { FaqComponent } from './faq/faq.component';
-import { CreateAccountComponent } from './create-account/create-account.component';
-import {SignInModule} from "./sign-in/sign-in.module";
-import {CreateAccountModule} from "./create-account/create-account.module";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import { AuthInterceptorService } from "./auth-interceptor.service";
+import { RegistrationModule } from "./registration/registration.module";
 
 @NgModule({
   declarations: [
@@ -21,15 +21,19 @@ import {CreateAccountModule} from "./create-account/create-account.module";
     HeaderComponent,
     AboutComponent,
     ServicesComponent,
-    FaqComponent,
+    FaqComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SignInModule,
-    CreateAccountModule
+    RegistrationModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
