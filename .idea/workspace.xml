@@ -20,23 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="697a6a6d-b95a-4ae6-a9ba-c2b58c772c39" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/forms.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/forms.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/@angular/forms/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/forms/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/constants/enums.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/constants/home.enum.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/create-account/create-account.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-account/create-account.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/create-account/create-account.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-account/create-account.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/create-account/create-account.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-account/create-account.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/create-account/create-account.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-account/create-account.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sign-in/sign-in.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sign-in/sign-in.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sign-in/sign-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sign-in/sign-in.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sign-in/sign-in.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sign-in/sign-in.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@angular/common/http/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@angular/common/http/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/__ngcc_entry_points__.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
