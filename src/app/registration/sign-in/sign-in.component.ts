@@ -25,7 +25,6 @@ export class SignInComponent implements OnInit {
     if (form.value.username && form.value.role && form.value.password) {
       this.authService.signIn(form.value.username, form.value.role, form.value.password)
         .subscribe((data: any) => {
-          debugger;
           this.authService.setLocalStorage(data.token);
         });
     }
