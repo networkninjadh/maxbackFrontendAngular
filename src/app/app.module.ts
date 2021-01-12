@@ -34,10 +34,8 @@ import { RegistrationModule } from "./registration/registration.module";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    //SignInModule,
-    //CreateAccountModule
     RegistrationModule,
+    AppRoutingModule,
     HttpClientModule
   ],
   providers: [{
