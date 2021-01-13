@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import {AuthenticationService} from "../../shared/authentication.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-in',
@@ -11,7 +12,7 @@ export class SignInComponent implements OnInit {
 
   signInForm: FormGroup;
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private router: Router, private authService: AuthenticationService) { }
 
   ngOnInit(): void {
     this.signInForm = new FormGroup({
@@ -25,9 +26,10 @@ export class SignInComponent implements OnInit {
     if (form.value.username && form.value.role && form.value.password) {
       this.authService.signIn(form.value.username, form.value.role, form.value.password)
         .subscribe((data: any) => {
-          debugger;
-          return this.authService.setLocalStorage(data.token);
-        }, (error => console.log(error)))
+          form.reset();
+          this.authService.setLocalStorage(data.token);
+          return this.router.navigate(['/'])
+        }, (error => console.log('Error during sign in ', error)))
     }
   }
 }
