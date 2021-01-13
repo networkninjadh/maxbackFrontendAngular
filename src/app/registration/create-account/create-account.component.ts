@@ -24,6 +24,7 @@ export class CreateAccountComponent implements OnInit {
   }
 
   createAccount(form: FormGroup) {
+    debugger;
     if (form.value.username && form.value.role && form.value.password) {
       const username: string = <string>form.value.username;
       const role: string = <string>form.value.role;
