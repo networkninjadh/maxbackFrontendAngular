@@ -4,8 +4,6 @@ import { AboutComponent } from './about/about.component';
 import { FaqComponent } from './faq/faq.component';
 import { HomeComponent } from './home/home.component';
 import { ServicesComponent } from './services/services.component';
-//import { SignInComponent } from './sign-in/sign-in.component';
-//import { CreateAccountComponent } from "./create-account/create-account.component";
 import { ProfileComponent } from './profile/profile.component';
 import { SignInComponent } from './registration/sign-in/sign-in.component';
 import { CreateAccountComponent } from "./registration/create-account/create-account.component";

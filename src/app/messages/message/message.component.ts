@@ -1,21 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-message',
+  selector: 'maxbac-message',
   templateUrl: './message.component.html',
   styleUrls: ['./message.component.scss']
 })
 export class MessageComponent implements OnInit {
 
-  messageTitle: string;
-  messageBody: string;
-
+  @Input() message;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  
 
 }

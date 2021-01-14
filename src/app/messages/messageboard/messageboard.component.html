@@ -1,3 +1,5 @@
 <div id="messageBoard">
-    <app-message></app-message>
+    <ul *ngFor="let message of messages">
+        <maxbac-message [message]="message"></maxbac-message>
+    </ul>
 </div>

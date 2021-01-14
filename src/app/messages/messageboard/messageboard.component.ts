@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Message } from "../../shared/models";
 
 @Component({
   selector: 'app-messageboard',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./messageboard.component.scss']
 })
 export class MessageboardComponent implements OnInit {
+
+  messages: Message[];
 
   constructor() { }
 

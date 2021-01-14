@@ -1,15 +1,11 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {shareReplay, tap} from "rxjs/operators";
-
-import * as moment from 'moment';
+import {CONSTANTS} from  './CONSTANTS';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
-
-  baseUrl: string = `https://maxbac-demo.herokuapp.com`
 
   constructor(private http: HttpClient) { }
 
@@ -19,8 +15,7 @@ export class AuthenticationService {
       username,
       role
     }
-    const registerUserUrl = `${this.baseUrl}/auth-api/register`;
-    return this.http.post(registerUserUrl, payload)
+    return this.http.post(`${CONSTANTS.BASE_URL}/auth-api/register`, payload)
   }
 
   signIn(username, role, password) {
@@ -29,8 +24,7 @@ export class AuthenticationService {
       role,
       password
     };
-    const signInUrl = `${this.baseUrl}/auth-api/signin`;
-    return this.http.post(signInUrl, payload)
+    return this.http.post(`${CONSTANTS.BASE_URL}/auth-api/signin`, payload)
   }
 
   logOut() {
@@ -40,8 +34,5 @@ export class AuthenticationService {
   setLocalStorage(token) {
     localStorage.setItem('bearer_token', token);
   }
-
-
-
 
 }
