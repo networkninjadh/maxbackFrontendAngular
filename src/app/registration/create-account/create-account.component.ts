@@ -33,12 +33,11 @@ export class CreateAccountComponent implements OnInit {
         (data) => {
           form.reset();
           return this.router.navigate([`/`]
-        )},(error) => {
-          console.log(error);
-        });
+        )},error=>
+          console.log(error)
+        );
     }
-    console.log('Error');
-    return;
+    return console.log('Error');
   }
 
 
