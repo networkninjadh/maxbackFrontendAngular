@@ -27,9 +27,10 @@ export class SignInComponent implements OnInit {
       this.authService.signIn(form.value.username, form.value.role, form.value.password)
         .subscribe((data: any) => {
           form.reset();
-          this.authService.setLocalStorage(data.token);
+          this.authService.setJwtToken(data.token);
           return this.router.navigate(['/'])
         }, (error => console.log('Error during sign in ', error)))
     }
+    return;
   }
 }

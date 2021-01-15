@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import {AuthenticationService} from "../../shared/authentication.service";
-import {Router} from "@angular/router";
-import { Customer } from './Customer';
-import { UserFiles } from './UserFiles';
-import { UserDetails } from 'src/UserDetails';
+import { AuthenticationService } from "../../shared/authentication.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-create-account',
@@ -24,33 +21,21 @@ export class CreateAccountComponent implements OnInit {
       'role': new FormControl(null, Validators.required),
       'password': new FormControl(null, Validators.required),
     });
-
-    //create an employee or customer to match to the user
-
   }
 
-  createAccount(form: FormGroup) {
-    debugger;
+  createAccount(form: FormGroup): void {
     if (form.value.username && form.value.role && form.value.password) {
       const username: string = <string>form.value.username;
       const role: string = <string>form.value.role;
       const password: string = <string>form.value.password;
-      var userDetails: UserDetails = new UserDetails();
       this.authService.register(username, role, password).subscribe(
         (data) => {
-          console.log();
-          if ( form.value.role === 'CUSTOMER'){
-            var userFiles = new UserFiles();
-            var customer = new Customer(null, null, form.value.username, userFiles);
-            var newCustomer = this.authService.createCustomer(customer, 'token');
-            console.log(newCustomer);
-        } else if (form.value.role === "EMPLOYEE"){
-            //create an employee object to match the user
-      }
+          console.log('Newly created customer', data);
           form.reset();
+          debugger;
           return this.router.navigate([`/`])
-        },error=>
-          console.log(error)
+        },error =>
+          console.log('Error upon creating account', error)
         );
     }
   }

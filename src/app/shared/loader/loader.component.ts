@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoaderService} from "./loader.service";
 
 @Component({
   selector: 'maxbac-loader',
@@ -9,7 +10,7 @@ export class LoaderComponent implements OnInit {
 
   isLoading: boolean;
 
-  constructor(private loaderService: LoaderComponent) { }
+  constructor(private loaderService: LoaderService) { }
 
   ngOnInit(): void {
 

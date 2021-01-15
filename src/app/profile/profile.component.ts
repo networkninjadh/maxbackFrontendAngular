@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,19 +9,17 @@ import { Component, OnInit } from '@angular/core';
 
 export class ProfileComponent implements OnInit {
 
- fileToUpload: File = null;
- apiKey: string = "";
- sessionId: string = "";
- v_token:string = "";
- 
- constructor() { }
+  fileToUpload;
 
-ngOnInit(): void {
-  
-}
+  constructor() {
+  }
 
-handleFileInput(files:FileList) {
-    this.fileToUpload = files.item(0);   
-}
+  ngOnInit(): void {
+
+  }
+
+  handleFileInput(files: FileList) {
+    this.fileToUpload = files.item(0);
+  }
 
 }
