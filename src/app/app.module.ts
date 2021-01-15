@@ -13,6 +13,7 @@ import { AuthInterceptorService } from "./auth-interceptor.service";
 import { RegistrationModule } from "./registration/registration.module";
 import {MessagesModule} from "./messages/messages.module";
 import {LayoutModule} from "./layout/layout.module";
+import {LoaderComponent} from "./shared/loader/loader.component";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {LayoutModule} from "./layout/layout.module";
     ServicesComponent,
     FaqComponent,
     ProfileComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

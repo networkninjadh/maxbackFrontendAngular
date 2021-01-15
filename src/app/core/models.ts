@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {Adapter} from "../core/adapter";
+import {Adapter} from "./adapter";
 
 export class Message {
   constructor(

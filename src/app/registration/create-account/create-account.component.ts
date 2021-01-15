@@ -32,8 +32,8 @@ export class CreateAccountComponent implements OnInit {
       this.authService.register(username, role, password).subscribe(
         (data) => {
           form.reset();
-          return this.router.navigate([`/`]
-        )},error=>
+          return this.router.navigate([`/`])
+        },error=>
           console.log(error)
         );
     }

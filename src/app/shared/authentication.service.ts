@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CONSTANTS} from  './CONSTANTS';
+import {shareReplay} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +25,7 @@ export class AuthenticationService {
       role,
       password
     };
-    return this.http.post(`${CONSTANTS.BASE_URL}/auth-api/signin`, payload)
+    return this.http.post(`${CONSTANTS.BASE_URL}/auth-api/signin`, payload).pipe(shareReplay())
   }
 
   logOut() {
