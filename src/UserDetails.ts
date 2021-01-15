@@ -1,6 +1,6 @@
 
 export class UserDetails {
-    id:string;
+    id:number;
     grantedAuthorities:string
     password:string;
     username:string;
