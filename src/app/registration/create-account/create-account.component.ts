@@ -48,8 +48,8 @@ export class CreateAccountComponent implements OnInit {
             //create an employee object to match the user
       }
           form.reset();
-          return this.router.navigate([`/`]
-        )},error=>
+          return this.router.navigate([`/`])
+        },error=>
           console.log(error)
         );
     }
