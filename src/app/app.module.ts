@@ -14,6 +14,7 @@ import { RegistrationModule } from "./registration/registration.module";
 import {MessagesModule} from "./messages/messages.module";
 import {LayoutModule} from "./layout/layout.module";
 import {LoaderComponent} from "./shared/loader/loader.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import {LoaderComponent} from "./shared/loader/loader.component";
     MessagesModule,
     LayoutModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

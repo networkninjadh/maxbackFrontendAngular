@@ -24,6 +24,17 @@
                    placeholder="Password"
                    type="password">
         </div>
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-lock"></i>
+            <label for="email">Email</label>
+            <input formControlName="email" id="email" placeholder="Email" type="text">
+        </div>
+        <div class="textbox">
+            <i aria-hidden="true" class="fa fa-lock"></i>
+            <label for="address">Address</label>
+            <input formControlName="address" id="address" placeholder="Address" type="text">
+        </div>
+
         <button name="createaccount-submit" type="submit">Create account</button>
     </form>
     <p>Already a member? <a routerLink="/sign-in">Login</a></p>

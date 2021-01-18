@@ -18,8 +18,11 @@ export class CreateAccountComponent implements OnInit {
   ngOnInit(): void {
     this.createAccountForm = new FormGroup({
       'username': new FormControl(null, Validators.required),
-      'role': new FormControl(null, Validators.required),
+      'role'    : new FormControl(null, Validators.required),
       'password': new FormControl(null, Validators.required),
+      'email'   : new FormControl(null, Validators.required),
+      'address' : new FormControl(null, Validators.required),
+      'phone'   : new FormControl(null, Validators.required)
     });
   }
 
@@ -28,7 +31,10 @@ export class CreateAccountComponent implements OnInit {
       const username: string = <string>form.value.username;
       const role: string = <string>form.value.role;
       const password: string = <string>form.value.password;
-      this.authService.register(username, role, password).subscribe(
+      const email: string = <string>form.value.email;
+      const address: string = <string>form.value.address;
+      const phone: string = <string> form.value.phone;
+      this.authService.register(username, role, password, email, address, phone).subscribe(
         (data) => {
           console.log('Newly created customer', data);
           form.reset();

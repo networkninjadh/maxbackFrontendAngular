@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { CONSTANTS } from  './CONSTANTS';
 import { shareReplay, switchMap, tap, map as rxMap } from "rxjs/operators";
+import { Customer } from '../registration/create-account/Customer';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,17 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  register(username, role, password) {
+  register(username:string, role:string, password:string, email:string, address:string, phone:string) {
     let payload = {
       password,
       username,
       role
+    }
+    let payload2 = {
+      username,
+      email,
+      address,
+      phone
     }
     return this.http.post(`${CONSTANTS.BASE_URL}/auth-api/register`, payload).pipe(
       tap((data: any) => {
@@ -22,7 +29,8 @@ export class AuthenticationService {
       }),
       switchMap((data) => {
         if (role === 'CUSTOMER') {
-          return this.http.post(`${CONSTANTS.BASE_URL}/profile-api/customer/new`, data.token)
+          let customer = new Customer(null, null, username, email, address, phone, null);
+          return this.http.post(`${CONSTANTS.BASE_URL}/profile-api/customer/new`, <Customer>payload2, data.token);
         } else {
           return;
         }
