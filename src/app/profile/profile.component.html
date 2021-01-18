@@ -5,16 +5,16 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
-                            <img src="{{this.profileImage}}" alt="Admin"
-                                class="rounded-circle" width="150">
-                                <form [formGroup] = "profileImageUploadForm" (ngSubmit)="onSubmit()">
-                                    <div>
-                                        <input type="file" name="profile" (change)="onFileSelect($event)"/>
-                                    </div>
-                                    <div>
-                                        <button type="submit">Upload</button>
-                                    </div>
-                                </form>
+                            <img alt="Admin" class="rounded-circle"
+                                 src="{{this.profileImage}}" width="150">
+                            <form (ngSubmit)="onSubmit()" [formGroup]="profileImageUploadForm">
+                                <div>
+                                    <input (change)="onFileSelect($event)" name="profile" type="file"/>
+                                </div>
+                                <div>
+                                    <button type="submit">Upload</button>
+                                </div>
+                            </form>
                             <div class="mt-3">
                                 <h4></h4>
                                 <p class="text-secondary mb-1">Customer</p>
@@ -55,7 +55,7 @@
                             </div>
                         </div>
                         <hr>
-                        
+
                         <div class="row">
                             <div class="col-sm-3">
                                 <h6 class="mb-0">Address</h6>
@@ -75,49 +75,53 @@
                             </div>
                         </div>
                     </div>
-               
-                <div class="row gutters-sm">
-                    <div class="col-sm-6 mb-3">
-                        <div class="card h-100">
-                            <div class="card-body">
-                             <h1> Uploads </h1>
-                             license
-                             insurance
-                             receipts
-                             w2s
-                             other
-                             <form [formGroup] = "dataUploadForm" (ngSubmit)="onSubmitData()">
-                                <div>
-                                    <input type="file" name="license" (change)="onFileSelect2($event)"/>
+
+                    <div class="row gutters-sm">
+                        <div class="col-sm-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h1> Uploads </h1>
+                                    license
+                                    insurance
+                                    receipts
+                                    w2s
+                                    other
+                                    <form (ngSubmit)="onSubmitData()" [formGroup]="dataUploadForm">
+                                        <div>
+                                            <input (change)="onFileSelect2($event)" formControlName="license"
+                                                   type="file"/>
+                                        </div>
+                                        <div>
+                                            <button type="submit">Upload</button>
+                                        </div>
+                                        <div>
+                                            <input (change)="onFileSelect($event)" formControlName="insurance"
+                                                   type="file"/>
+                                        </div>
+                                        <div>
+                                            <button type="submit">Upload</button>
+                                        </div>
+                                        <div>
+                                            <input (change)="onFileSelect($event)" formControlName="receipts"
+                                                   type="file"/>
+                                        </div>
+                                        <div>
+                                            <button type="submit">Upload</button>
+                                        </div>
+                                        <div>
+                                            <input (change)="onFileSelect($event)" formControlName="w2s" type="file"/>
+                                        </div>
+                                        <div>
+                                            <button type="submit">Upload</button>
+                                        </div>
+                                        <div>
+                                            <input (change)="onFileSelect($event)" formControlName="other" type="file"/>
+                                        </div>
+                                        <div>
+                                            <button type="submit">Upload</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div>
-                                    <button type="submit">Upload</button>
-                                </div>
-                                <div>
-                                    <input type="file" name="insurance" (change)="onFileSelect($event)"/>
-                                </div>
-                                <div>
-                                    <button type="submit">Upload</button>
-                                </div>
-                                <div>
-                                    <input type="file" name="receipts" (change)="onFileSelect($event)"/>
-                                </div>
-                                <div>
-                                    <button type="submit">Upload</button>
-                                </div>
-                                <div>
-                                    <input type="file" name="w2s" (change)="onFileSelect($event)"/>
-                                </div>
-                                <div>
-                                    <button type="submit">Upload</button>
-                                </div>
-                                <div>
-                                    <input type="file" name="other" (change)="onFileSelect($event)"/>
-                                </div>
-                                <div>
-                                    <button type="submit">Upload</button>
-                                </div>
-                            </form>
                             </div>
                         </div>
                     </div>
@@ -125,4 +129,3 @@
             </div>
         </div>
     </div>
-</div>

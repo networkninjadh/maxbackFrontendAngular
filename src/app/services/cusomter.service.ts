@@ -7,14 +7,10 @@ import { Customer } from '../registration/create-account/Customer';
 @Injectable({
     providedIn: 'root'
 })
-
 export class CustomerService {
     constructor(private http: HttpClient) {}
 
     getCustomer(){
-        debugger;
-        return this.http.get<Customer>("https://maxbac-demo.herokuapp.com/profile-api/customer/", 
-        {headers:{Authorization:`Bearer ${localStorage.getItem("bearer_token")}`}})
-        debugger;
+        return this.http.get<Customer>("https://maxbac-demo.herokuapp.com/profile-api/customer/")
     }
 }

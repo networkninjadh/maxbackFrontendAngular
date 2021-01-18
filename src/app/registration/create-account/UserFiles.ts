@@ -1,4 +1,4 @@
-export class UserFiles {
+export interface UserFiles {
     id:number;
     profileImageUrl:string;
     reciepts:string[];

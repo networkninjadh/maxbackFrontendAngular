@@ -23,14 +23,14 @@ export class AuthenticationService {
       address,
       phone
     }
-    return this.http.post(`${CONSTANTS.BASE_URL}/auth-api/register`, payload).pipe(
+    return this.http.post(`${CONSTANTS.PRODUCTION_BASE_URL}${CONSTANTS.REGISTER}`, payload).pipe(
       tap((data: any) => {
         return this.setJwtToken(data.token);
       }),
       switchMap((data) => {
         if (role === 'CUSTOMER') {
           let customer = new Customer(null, null, username, email, address, phone, null);
-          return this.http.post(`${CONSTANTS.BASE_URL}/profile-api/customer/new`, <Customer>payload2, data.token);
+          return this.http.post(`${CONSTANTS.PRODUCTION_BASE_URL}/profile-api/customer/new`, <Customer>payload2, data.token).pipe(shareReplay());
         } else {
           return;
         }
@@ -44,7 +44,7 @@ export class AuthenticationService {
       role,
       password
     };
-    return this.http.post(`${CONSTANTS.BASE_URL}/auth-api/signin`, payload).pipe(shareReplay())
+    return this.http.post(`${CONSTANTS.PRODUCTION_BASE_URL}${CONSTANTS.LOG_IN}`, payload).pipe(shareReplay())
   }
 
   logOut() {
