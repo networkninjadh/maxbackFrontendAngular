@@ -30,7 +30,7 @@ export class AuthenticationService {
       switchMap((data) => {
         if (role === 'CUSTOMER') {
           let customer = new Customer(null, null, username, email, address, phone, null);
-          return this.http.post(`${CONSTANTS.PRODUCTION_BASE_URL}/profile-api/customer/new`, <Customer>payload2, data.token).pipe(shareReplay());
+          return this.http.post(`${CONSTANTS.PRODUCTION_BASE_URL}${CONSTANTS.NEW_CUSTOMER}`, <Customer>payload2, data.token).pipe(shareReplay());
         } else {
           return;
         }
@@ -44,7 +44,10 @@ export class AuthenticationService {
       role,
       password
     };
-    return this.http.post(`${CONSTANTS.PRODUCTION_BASE_URL}${CONSTANTS.LOG_IN}`, payload).pipe(shareReplay())
+    return this.http.post(`${CONSTANTS.PRODUCTION_BASE_URL}${CONSTANTS.LOG_IN}`, payload).pipe(
+      tap(data => this.setJwtToken(data['token'])),
+      shareReplay()
+    )
   }
 
   logOut() {
