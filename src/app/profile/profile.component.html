@@ -72,7 +72,7 @@
                             <div class="card-body">
                                 <h1> Message Board </h1>
                                 <app-messageboard></app-messageboard>
-                            </div>
+                            </div>file
                         </div>
                     </div>
 
@@ -88,28 +88,34 @@
                                     other
                                     <form (ngSubmit)="onSubmitData()" [formGroup]="dataUploadForm">
                                         <div>
-                                            <input (change)="onFileSelect2($event)" formControlName="license"
-                                                   type="file"/>
+                                            <input type="file" (change)="onFileSelect2($event)" placeholder="Upload file" accept=".pdf,.doc,.docx">
                                         </div>
                                         <div>
                                             <button type="submit">Upload</button>
                                         </div>
                                         <div>
-                                            <input (change)="onFileSelect($event)" formControlName="insurance"
-                                                   type="file"/>
+                                            <input type="file" formControlName="insurance"
+                                                   (change)="onFileSelect($event)"
+                                                   placeholder="Upload file"
+                                                   accept=".pdf,.doc,.docx">
                                         </div>
                                         <div>
                                             <button type="submit">Upload</button>
                                         </div>
                                         <div>
-                                            <input (change)="onFileSelect($event)" formControlName="receipts"
-                                                   type="file"/>
+                                            <input type="file" formControlName="receipts"
+                                                   (change)="onFileSelect($event)"
+                                                   placeholder="Upload file"
+                                                   accept=".pdf,.doc,.docx">
                                         </div>
                                         <div>
                                             <button type="submit">Upload</button>
                                         </div>
                                         <div>
-                                            <input (change)="onFileSelect($event)" formControlName="w2s" type="file"/>
+                                            <input type="file" formControlName="w2s"
+                                                   (change)="onFileSelect($event)"
+                                                   placeholder="Upload file"
+                                                   accept=".pdf,.doc,.docx">
                                         </div>
                                         <div>
                                             <button type="submit">Upload</button>
